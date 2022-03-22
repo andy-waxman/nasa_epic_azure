@@ -9,9 +9,9 @@ class TestMainFunction(unittest.TestCase):
     def test_main_basetest(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -28,9 +28,9 @@ class TestMainFunction(unittest.TestCase):
     def test_main_missing_identifier_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -47,15 +47,15 @@ class TestMainFunction(unittest.TestCase):
     def test_main_invalid_length_identifier_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        identitfier = "20151031";
-        content = { "identitfier":identitfier,"api_key":api_key }
+        identifier = "20151031";
+        content = { "identifier":identifier,"api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
         # Act
@@ -67,15 +67,15 @@ class TestMainFunction(unittest.TestCase):
     def test_main_invalid_date_identifier_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        identitfier = "20151035174844";
-        content = { "identitfier":identitfier,"api_key":api_key }
+        identifier = "20151035174844";
+        content = { "identifier":identifier,"api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
         # Act
@@ -87,14 +87,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_missing_api_key_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier }
+        content = { "identifier":identifier }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
         # Act
@@ -106,14 +106,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_format_enhanced(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "format":"enhanced" }
+        content = { "identifier":identifier, "api_key":api_key, "format":"enhanced" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -127,14 +127,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_format_natural(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "format":"natural" }
+        content = { "identifier":identifier, "api_key":api_key, "format":"natural" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -148,14 +148,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_format_invalid_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "format":"invalid" }
+        content = { "identifier":identifier, "api_key":api_key, "format":"invalid" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -169,14 +169,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_output_bmp(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "output":"bmp" }
+        content = { "identifier":identifier, "api_key":api_key, "output":"bmp" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -190,14 +190,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_output_png(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "output":"png" }
+        content = { "identifier":identifier, "api_key":api_key, "output":"png" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -211,14 +211,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_output_jpeg(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "output":"jpeg" }
+        content = { "identifier":identifier, "api_key":api_key, "output":"jpeg" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -232,14 +232,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_output_invalid_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "output":"invalid" }
+        content = { "identifier":identifier, "api_key":api_key, "output":"invalid" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -252,14 +252,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_width_200_as_string(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "width":"200" }
+        content = { "identifier":identifier, "api_key":api_key, "width":"200" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -273,14 +273,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_width_200_as_int(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "width":200 }
+        content = { "identifier":identifier, "api_key":api_key, "width":200 }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -294,14 +294,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_width_too_small_as_string_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "width":"100" }
+        content = { "identifier":identifier, "api_key":api_key, "width":"100" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -314,14 +314,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_width_too_small_as_int_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "width":100 }
+        content = { "identifier":identifier, "api_key":api_key, "width":100 }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -334,14 +334,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_width_too_large_as_string_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "width":"2200" }
+        content = { "identifier":identifier, "api_key":api_key, "width":"2200" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -354,14 +354,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_width_too_large_as_int_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "width":2200 }
+        content = { "identifier":identifier, "api_key":api_key, "width":2200 }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -374,14 +374,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_width_not_a_number_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "width":"abc" }
+        content = { "identifier":identifier, "api_key":api_key, "width":"abc" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -394,14 +394,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_height_200_as_string(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "height":"200" }
+        content = { "identifier":identifier, "api_key":api_key, "height":"200" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -415,14 +415,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_height_200_as_int(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "height":200 }
+        content = { "identifier":identifier, "api_key":api_key, "height":200 }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -436,14 +436,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_height_too_small_as_string_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "height":"100" }
+        content = { "identifier":identifier, "api_key":api_key, "height":"100" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -456,14 +456,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_height_too_small_as_int_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "height":100 }
+        content = { "identifier":identifier, "api_key":api_key, "height":100 }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -476,14 +476,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_height_too_large_as_string_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "height":"2200" }
+        content = { "identifier":identifier, "api_key":api_key, "height":"2200" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -496,14 +496,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_height_too_large_as_int_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "height":2200 }
+        content = { "identifier":identifier, "api_key":api_key, "height":2200 }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
@@ -516,14 +516,14 @@ class TestMainFunction(unittest.TestCase):
     def test_main_height_not_a_number_returns_400(self):
         
         # Arrange
-        identitfier = "20151031074844";
+        identifier = "20151031074844";
         api_key = "DEMO_KEY"; # using this value as an api key is limited to 30 calls an hour
-        content = { "identitfier":identitfier, "api_key":api_key }
+        content = { "identifier":identifier, "api_key":api_key }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 
         # Adjust
-        content = { "identitfier":identitfier, "api_key":api_key, "height":"abc" }
+        content = { "identifier":identifier, "api_key":api_key, "height":"abc" }
         json_content = json.dumps(content).encode("utf-8")
         req = func.HttpRequest(method="POST", url="/GetAndResizeImage", body=json_content)
 

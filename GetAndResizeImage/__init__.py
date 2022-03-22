@@ -31,27 +31,29 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         logging.error(error)
         return func.HttpResponse(error, status_code=400)
 
+    logging.info(f"body: {req_body}")
+    
     api_key = req_body.get("api_key")  
     if api_key is None:
         error = f"No value was found for \"api_key\""
         logging.error(error)
         return func.HttpResponse(error, status_code=400)
 
-    identitfier =  req_body.get("identitfier")  
-    logging.info(f"identifier: {identitfier}")
-    if identitfier is None:
-        error = f"No value was found for \"identitfier\""
+    identifier =  req_body.get("identifier")  
+    logging.info(f"identifier: {identifier}")
+    if identifier is None:
+        error = f"No value was found for \"identifier\""
         logging.error(error)
         return func.HttpResponse(error, status_code=400)
 
-    if len(identitfier) < 14:
-        error = f"Invalid \"identitfier\" value: {identitfier}"
+    if len(identifier) < 14:
+        error = f"Invalid \"identifier\" value: {identifier}"
         logging.error(error)
         return func.HttpResponse(error, status_code=400)
 
-    year = identitfier[0:4]
-    month = identitfier[4:6]
-    day = identitfier[6:8]
+    year = identifier[0:4]
+    month = identifier[4:6]
+    day = identifier[6:8]
     if not year.isdigit() or not month.isdigit() or not day.isdigit:
         error = f"Invalid date from month: {month}, day: {day}, year: {year}"
         logging.error(error)
@@ -130,7 +132,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     # Grab the image
     try:
-        with urlopen(f"{nasa_url}/{year}/{month}/{day}/png/epic_{image_type}_{identitfier}.png?api_key={api_key}") as imageurl:
+        with urlopen(f"{nasa_url}/{year}/{month}/{day}/png/epic_{image_type}_{identifier}.png?api_key={api_key}") as imageurl:
             full_image = Image.open(imageurl)
     except HTTPError as e:
         error = f"HTTPError: {e.status}: {e.reason}"
