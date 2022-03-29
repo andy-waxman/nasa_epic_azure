@@ -5,7 +5,7 @@
 # Requests must be POST with a content-type of application/json
 # Arguments in JSON object
 # api_key: API key from NASA, Required
-# identitier: 14 digit identifier for specific image, Required
+# identifier: 14 digit identifier for specific image, Required
 # format: natural|enhanced, See NASA documention difference, default natural
 # width: Width in pixels for output image, default 240, valid range 180 to 1850
 # height: Height in pixels for output image, default 240, valid range 180 to 1850
